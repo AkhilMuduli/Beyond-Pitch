@@ -656,7 +656,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    ══════════════════════════════════════════════════════════════ */
 .brands-proof {
   background: var(--bg);
-  padding: 7rem 1.5rem;
+  padding: 6rem 1.5rem;
 }
 .brands-proof__inner {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -695,7 +695,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    ══════════════════════════════════════════════════════════════ */
 .portfolio-sec {
   background: var(--bg);
-  padding: 7rem 1.5rem;
+  padding: 6rem 1.5rem;
   overflow: hidden;
 }
 .portfolio-sec__inner {
@@ -806,7 +806,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    ══════════════════════════════════════════════════════════════ */
 .dms-sec {
   background: var(--bg);
-  padding: 6rem 1.5rem 7rem;
+  padding: 6rem 1.5rem;
   overflow: hidden;
 }
 .dms-sec__inner {
@@ -917,7 +917,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    ══════════════════════════════════════════════════════════════ */
 .app-sec {
   background: var(--bg2);
-  padding: 7rem 1.5rem;
+  padding: 6rem 1.5rem;
   position: relative; overflow: hidden;
 }
 .app-sec::before {
@@ -979,7 +979,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    ══════════════════════════════════════════════════════════════ */
 .growth {
   background: var(--bg);
-  padding: 5rem 1.5rem 6rem;
+  padding: 6rem 1.5rem;
   overflow: hidden;
 }
 .growth__inner {
@@ -1104,7 +1104,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    ══════════════════════════════════════════════════════════════ */
 .faq {
   background: var(--bg2);
-  padding: 7rem 1.5rem;
+  padding: 6rem 1.5rem;
   border-top: 1px solid var(--border);
 }
 .faq__head { text-align: center; margin-bottom: 3.5rem; }
@@ -1155,7 +1155,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    ══════════════════════════════════════════════════════════════ */
 .ftcta {
   background: var(--bg);
-  padding: 7rem 1.5rem;
+  padding: 6rem 1.5rem;
   position: relative; overflow: hidden;
   border-top: 1px solid var(--border);
 }
@@ -1195,7 +1195,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .footer { background: #0d0d0f; border-top: 1px solid var(--border); }
 .footer__inner {
   display: grid; grid-template-columns: 1.5fr 1fr;
-  gap: 3rem; padding: 4rem 1.5rem;
+  gap: 3rem; padding: 3.5rem 1.5rem;
 }
 .footer__brand p { font-size: .84rem; color: var(--muted); margin-top: .6rem; max-width: 200px; }
 .footer__cols { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
@@ -1250,6 +1250,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .ftcta__img-col { justify-content: center; }
   .ftcta__card { width: min(380px, 90%); }
   .creative__orbs { height: 320px; }
+
+  /* Tablet: moderate spacing */
+  .stats-section, .brands-proof, .portfolio-sec,
+  .app-sec, .faq, .ftcta { padding-top: 4.5rem; padding-bottom: 4.5rem; }
+  .dms-sec  { padding-top: 4.5rem; padding-bottom: 4.5rem; }
+  .growth   { padding-top: 4rem;   padding-bottom: 4rem; }
 }
 @media (max-width: 600px) {
   .hero__headline { font-size: clamp(2.6rem, 11vw, 3.8rem); letter-spacing: -.03em; }
@@ -1257,6 +1263,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .creators__row--shift{ grid-template-columns: repeat(2,1fr); }
   .hero__card { display: none; }
   .footer__cols { grid-template-columns: 1fr 1fr; }
+
+  /* Mobile: tight even spacing throughout */
+  .stats-section, .brands-proof, .portfolio-sec,
+  .dms-sec, .app-sec, .growth, .faq, .ftcta {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .marquee-section { padding: 2rem 0; }
+  .fsec     { padding: 3rem 1.2rem; }
+  .portfolio-card { max-width: 100%; }
+  .footer__inner { padding: 2.5rem 1.2rem; }
 }
 
 
