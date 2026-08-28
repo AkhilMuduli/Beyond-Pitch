@@ -1,6 +1,6 @@
 /**
  * BEYOND — Hero Star Field
- * Pure Canvas 2D: galaxy spiral + parallax star layers + cursor interaction
+ * Pure Canvas 2D: parallax star layers + cursor interaction
  * No dependencies.
  */
 (function () {
@@ -29,18 +29,16 @@
   /* ═══════════════════════════════════════════════════════════
      DATA STRUCTURES
   ═══════════════════════════════════════════════════════════ */
-  let bgStars   = [];  // scattered background stars (3 depth layers)
-  let galPts    = [];  // galaxy spiral particles
+  let bgStars = [];  // scattered background stars (3 depth layers)
 
   function buildScene() {
     bgStars = [];
-    galPts  = [];
 
     // ── Background stars (3 parallax layers) ──────────────
     const layerDefs = [
-      { n: 160, rMin: 0.25, rMax: 0.75, opMin: 0.25, opMax: 0.55, pFactor: 0.010 },
-      { n: 100, rMin: 0.5,  rMax: 1.4,  opMin: 0.45, opMax: 0.80, pFactor: 0.022 },
-      { n:  55, rMin: 1.1,  rMax: 2.8,  opMin: 0.70, opMax: 1.00, pFactor: 0.040 },
+      { n: 160, rMin: 0.25, rMax: 0.75, opMin: 0.16, opMax: 0.36, pFactor: 0.010 },
+      { n: 100, rMin: 0.5,  rMax: 1.4,  opMin: 0.28, opMax: 0.52, pFactor: 0.022 },
+      { n:  55, rMin: 1.1,  rMax: 2.8,  opMin: 0.45, opMax: 0.68, pFactor: 0.040 },
     ];
 
     layerDefs.forEach(({ n, rMin, rMax, opMin, opMax, pFactor }) => {
@@ -62,51 +60,6 @@
       }
     });
 
-    // ── Galaxy spiral ──────────────────────────────────────
-    const CX = 0.52, CY = 0.46;          // centre as fraction of canvas
-
-    // Dense core
-    for (let i = 0; i < 90; i++) {
-      const a = Math.random() * Math.PI * 2;
-      const d = Math.random() * 0.045 * Math.min(W, H);
-      galPts.push({
-        nx: CX + Math.cos(a) * d / W,
-        ny: CY + Math.sin(a) * d / H,
-        r:  0.3 + Math.random() * 1.1,
-        op: 0.4 + Math.random() * 0.6,
-        twPhase: Math.random() * Math.PI * 2,
-        twSpeed: 0.008 + Math.random() * 0.02,
-        rotSpeed: (Math.random() - 0.5) * 0.0015,
-        orbitA: a, orbitD: d / W, orbitDY: d / H,
-        pFactor: 0.008,
-      });
-    }
-
-    // Two spiral arms
-    for (let arm = 0; arm < 2; arm++) {
-      const offset = arm * Math.PI;
-      for (let i = 0; i < 340; i++) {
-        const prog   = i / 340;
-        const angle  = offset + prog * Math.PI * 3.8;
-        const radius = (0.025 + prog * 0.18) * Math.min(W, H);
-        const radY   = radius * 0.55;
-        const jitter = (Math.random() - 0.5) * radius * (0.08 + prog * 0.35);
-        const jitterY= (Math.random() - 0.5) * radY  * (0.08 + prog * 0.35);
-        const px = CX + (Math.cos(angle) * radius + jitter) / W;
-        const py = CY + (Math.sin(angle) * radY   + jitterY) / H;
-        galPts.push({
-          nx: px, ny: py,
-          r:  0.2 + Math.random() * (prog < 0.35 ? 1.6 : 0.9),
-          op: (1 - prog * 0.55) * (0.35 + Math.random() * 0.55),
-          twPhase: Math.random() * Math.PI * 2,
-          twSpeed: 0.003 + Math.random() * 0.009,
-          rotSpeed: 0.00035 + Math.random() * 0.00015,
-          orbitA: angle, orbitD: radius / W, orbitDY: radY / H,
-          jitter:  jitter / W, jitterY: jitterY / H,
-          pFactor: 0.006,
-        });
-      }
-    }
   }
 
   /* ═══════════════════════════════════════════════════════════
@@ -176,36 +129,6 @@
       ctx.fillStyle = `rgba(${r},${g},${b},${op})`;
       ctx.beginPath();
       ctx.arc(sx, sy, s.r, 0, Math.PI * 2);
-      ctx.fill();
-    });
-
-    // ── Galaxy spiral ─────────────────────────────────────
-    const CX = 0.52 * W, CY = 0.46 * H;
-
-    galPts.forEach(p => {
-      // Slowly rotate each point around the galaxy centre
-      p.orbitA += p.rotSpeed;
-
-      let wx, wy;
-      if (p.jitter !== undefined) {
-        wx = CX + (Math.cos(p.orbitA) * p.orbitD + p.jitter) * W;
-        wy = CY + (Math.sin(p.orbitA) * p.orbitDY + p.jitterY) * H;
-      } else {
-        wx = CX + Math.cos(p.orbitA) * p.orbitD * W;
-        wy = CY + Math.sin(p.orbitA) * p.orbitDY * H;
-      }
-
-      // Cursor parallax (galaxy moves slower than bg stars → depth)
-      wx += dx * p.pFactor * W * 12;
-      wy += dy * p.pFactor * H * 8;
-
-      if (wx < -10 || wx > W + 10 || wy < -10 || wy > H + 10) return;
-
-      const twinkle = 0.6 + Math.sin(tick * (p.twSpeed * 100) + p.twPhase) * 0.4;
-      ctx.globalAlpha = p.op * twinkle;
-      ctx.fillStyle = '#ffffff';
-      ctx.beginPath();
-      ctx.arc(wx, wy, p.r, 0, Math.PI * 2);
       ctx.fill();
     });
 
