@@ -83,9 +83,9 @@
     rafId = requestAnimationFrame(draw);
     tick += 0.008;
 
-    // Smooth mouse
-    mouseX += (rawX - mouseX) * 0.055;
-    mouseY += (rawY - mouseY) * 0.055;
+    // Smooth mouse — lower value = slower/lazier follow
+    mouseX += (rawX - mouseX) * 0.025;
+    mouseY += (rawY - mouseY) * 0.025;
 
     const dx = mouseX - 0.5;  // -0.5 to +0.5
     const dy = mouseY - 0.5;
@@ -103,8 +103,8 @@
     // ── Background stars ─────────────────────────────────
     bgStars.forEach(s => {
       // parallax offset
-      const ox = s.nx * W + dx * s.pFactor * W * 12;
-      const oy = s.ny * H + dy * s.pFactor * H * 8;
+      const ox = s.nx * W + dx * s.pFactor * W * 4;
+      const oy = s.ny * H + dy * s.pFactor * H * 2.5;
 
       // wrap around edges
       const sx = ((ox % W) + W) % W;
