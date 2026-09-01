@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Beyond</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .inner-page { min-height: 100vh; background: var(--bg); padding: 10rem 1.5rem 7rem; }
+    .inner-page__wrap { max-width: 820px; margin: 0 auto; }
+    .inner-page__label { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--pink); margin-bottom: 1.2rem; }
+    .inner-page__title { font-family: "Bricolage Grotesque", sans-serif; font-size: clamp(2.2rem, 5.5vw, 3.8rem); font-weight: 800; color: #fff; letter-spacing: -.04em; line-height: 1.06; margin-bottom: 2.2rem; }
+    .inner-page__divider { width: 52px; height: 3px; background: linear-gradient(90deg, #e8412a, #f7258a); border-radius: 99px; margin-bottom: 3rem; }
+    .inner-page__body { font-size: 1rem; color: rgba(255,255,255,.56); line-height: 1.88; }
+    .inner-page__body p { margin-bottom: 1.5rem; }
+    .inner-page__body h2 { font-family: "Bricolage Grotesque", sans-serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; color: #fff; letter-spacing: -.03em; margin: 3.5rem 0 1rem; line-height: 1.1; }
+    .inner-page__body ul { list-style: none; display: flex; flex-direction: column; gap: .85rem; margin: 1.2rem 0 2rem; padding: 0; }
+    .inner-page__body ul li { display: flex; align-items: flex-start; gap: .75rem; font-size: .97rem; color: rgba(255,255,255,.58); line-height: 1.7; }
+    .inner-page__body ul li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #f7258a; flex-shrink: 0; margin-top: .58rem; }
+    .pull-quote { position: relative; background: rgba(18,18,22,.97); border-radius: 16px; padding: 1.8rem 2rem; margin: 2.8rem 0; overflow: hidden; }
+    .pull-quote::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background-image: linear-gradient(to right, transparent 6%, rgba(232,65,42,.28) 22%, rgba(232,65,42,.36) 50%, rgba(232,65,42,.28) 78%, transparent 94%), linear-gradient(to bottom, transparent 10%, rgba(232,65,42,.10) 28%, rgba(232,65,42,.10) 72%, transparent 90%), linear-gradient(to right, transparent 10%, rgba(232,65,42,.04) 30%, rgba(232,65,42,.04) 70%, transparent 90%), linear-gradient(to bottom, transparent 10%, rgba(232,65,42,.10) 28%, rgba(232,65,42,.10) 72%, transparent 90%); background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%; background-position: top, right, bottom, left; background-repeat: no-repeat; }
+    .pull-quote p { font-family: "Bricolage Grotesque", sans-serif; font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 700; color: #fff !important; line-height: 1.5; margin: 0 !important; position: relative; z-index: 1; }
+    .pull-quote p span { color: #e8412a; }
+    .hl { color: rgba(255,255,255,.82); font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav nav--inner" id="navbar">
+    <div class="nav__inner">
+      <div class="nav__left">
+        <a href="index.html" class="nav__logo">beyond<span class="logo-dot">.</span></a>
+      </div>
+      <a href="index.html" class="nav__back-btn">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="10 4 6 8 10 12"/></svg>
+        Back to home
+      </a>
+    </div>
+  </nav>
+
+  <main class="inner-page">
+    <div class="inner-page__wrap">
+      <span class="inner-page__label">About Us</span>
+      <h1 class="inner-page__title">Reimagining the Internet's Distribution Layer</h1>
+      <div class="inner-page__divider"></div>
+      <div class="inner-page__body">
+        <p>At Beyond, we believe the internet's next distribution layer isn't ads — it's culture. For years, marketing has been about impressions, clicks, and transactions. But audiences today respond to something deeper: belonging, community, and authentic voices.</p>
+        <p>Creators have emerged as the carriers of this shift. They shape culture, drive conversations, and influence commerce at scale. Beyond is building the infrastructure that transforms this energy into a system — an AI-native platform where culture itself becomes the medium of distribution.</p>
+        <div class="pull-quote"><p>The internet's next distribution layer <span>isn't ads — it's creators.</span></p></div>
+        <h2>The Cultural Graph</h2>
+        <p>At the core of Beyond is the Cultural Graph — an intelligent network that maps the relationships between creators, content, communities, and brands. Unlike static demographic targeting, the cultural graph evolves continuously, understanding not just who audiences are, but what they care about and how they interact.</p>
+        <ul>
+          <li>Creators are mapped by tone, niche, and influence loops.</li>
+          <li>Communities are identified by cultural affinity and behaviour, not just age or geography.</li>
+          <li>Brands are placed within contexts where they feel organic and relevant.</li>
+        </ul>
+        <h2>Our AI-Native Stack: Shaping the Future of Cultural Distribution</h2>
+        <p>At Beyond, we are building an AI-native cultural infrastructure that redefines how brands, creators, and audiences interact. Instead of treating marketing as a transaction, we see it as a living system where culture itself becomes the distribution layer.</p>
+        <p>Every campaign, every piece of content, and every commerce touchpoint flows through an intelligent network that learns and adapts in real time. Our technology maps how influence moves across creators, communities, and subcultures, predicting where attention will shift next and ensuring that brands are positioned at the center of those moments.</p>
+        <p>What makes this different is that the intelligence is embedded at every layer of the system. From strategy to amplification to commerce, AI doesn't just optimize performance — it orchestrates how campaigns are designed, how they scale through creator ecosystems, and how they translate into measurable outcomes.</p>
+        <ul>
+          <li>For <span class="hl">creators</span>, this means faster growth, smarter tools, and new ways to monetize their cultural presence.</li>
+          <li>For <span class="hl">brands</span>, it means campaigns that don't interrupt audiences but belong inside the cultural moments people already care about.</li>
+        </ul>
+        <p>Beyond is not just solving today's marketing challenges; it is building the infrastructure for the internet's next economy — one where culture, commerce, and intelligence are seamlessly connected.</p>
+        <h2>Our Vision</h2>
+        <p>We are <span class="hl">Beyond Collective Private Limited</span>. Our mission is to create the cultural graph and the AI-native growth engine that will define how creators, brands, and consumers connect.</p>
+        <p>We don't see creators as media slots. We see them as the architects of the internet's next economy.</p>
+        <div class="pull-quote"><p>The internet's next distribution layer <span>isn't ads — it's creators.</span></p></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__bar">
+      <div class="footer__bar-inner">
+        <span class="nav__logo footer__logo">beyond<span class="logo-dot">.</span></span>
+        <nav class="footer__nav">
+          <a href="index.html#how-it-works">How it works</a>
+          <a href="index.html#brands">For brands</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <span class="footer__copy">&#169; 2026 Beyond. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

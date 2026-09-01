@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Beyond</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-page { min-height: 100vh; background: var(--bg); padding: 10rem 1.5rem 7rem; }
+    .contact-page__wrap { max-width: 1060px; margin: 0 auto; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .contact-left__title { font-family: "Bricolage Grotesque", sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -.03em; line-height: 1.1; margin-bottom: 1.5rem; background: linear-gradient(135deg, #e8412a, #f7258a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .contact-left__sub { font-size: .97rem; color: rgba(255,255,255,.52); line-height: 1.82; margin-bottom: 1.2rem; }
+    .contact-info-block { margin-top: 2.4rem; }
+    .contact-info-block__label { font-family: "Bricolage Grotesque", sans-serif; font-size: 1rem; font-weight: 700; color: rgba(255,255,255,.88); margin-bottom: .9rem; }
+    .contact-info-block__label--pink { color: #f7258a; font-size: 1.2rem; }
+    .contact-info-block__row { font-size: .94rem; color: rgba(255,255,255,.52); line-height: 1.8; margin-bottom: .2rem; }
+    .contact-info-block__row a { color: rgba(255,255,255,.52); transition: color .2s; }
+    .contact-info-block__row a:hover { color: #fff; }
+    .contact-right__title { font-family: "Bricolage Grotesque", sans-serif; font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 800; letter-spacing: -.03em; color: #f7258a; margin-bottom: .9rem; }
+    .contact-right__sub { font-size: .95rem; color: rgba(255,255,255,.68); font-weight: 600; line-height: 1.6; margin-bottom: 2rem; }
+    .contact-form { display: flex; flex-direction: column; gap: .85rem; }
+    .contact-form input, .contact-form textarea { width: 100%; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.10); border-radius: 10px; padding: .85rem 1.1rem; font-family: "Cabinet Grotesk", sans-serif; font-size: .9rem; color: rgba(255,255,255,.78); outline: none; transition: border-color .25s, background .25s; resize: none; }
+    .contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(255,255,255,.28); }
+    .contact-form input:focus, .contact-form textarea:focus { border-color: rgba(247,37,133,.4); background: rgba(255,255,255,.07); }
+    .contact-form textarea { height: 130px; }
+    .contact-form__btn { display: inline-flex; align-items: center; justify-content: center; padding: .82rem 2.4rem; border-radius: 99px; background: linear-gradient(135deg, #e8412a 0%, #f7258a 100%); color: #fff; font-family: "Bricolage Grotesque", sans-serif; font-size: .95rem; font-weight: 700; letter-spacing: .01em; border: none; cursor: pointer; width: fit-content; box-shadow: inset 0 1px 0 rgba(255,255,255,.22), 0 4px 20px rgba(232,65,42,.28); transition: transform .25s, box-shadow .25s; }
+    .contact-form__btn:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,.26), 0 8px 28px rgba(232,65,42,.42); }
+    @media (max-width: 760px) { .contact-grid { grid-template-columns: 1fr; gap: 3.5rem; } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav nav--inner" id="navbar">
+    <div class="nav__inner">
+      <div class="nav__left">
+        <a href="index.html" class="nav__logo">beyond<span class="logo-dot">.</span></a>
+      </div>
+      <a href="index.html" class="nav__back-btn">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="10 4 6 8 10 12"/></svg>
+        Back to home
+      </a>
+    </div>
+  </nav>
+
+  <main class="contact-page">
+    <div class="contact-page__wrap">
+      <div class="contact-grid">
+        <div class="contact-left">
+          <h1 class="contact-left__title">Let's Build What's Next — Together</h1>
+          <p class="contact-left__sub">At Beyond, we're reimagining marketing as cultural infrastructure.</p>
+          <p class="contact-left__sub">Whether you're a brand looking to scale through creators, a creator ready to amplify your impact, or a partner excited to shape the future of this ecosystem — we'd love to hear from you.</p>
+          <div class="contact-info-block">
+            <div class="contact-info-block__label">General Enquiries</div>
+            <div class="contact-info-block__row"><a href="mailto:Connect@gobeyond.now">Connect@gobeyond.now</a></div>
+            <div class="contact-info-block__row"><a href="tel:+919677779021">+91 967 777 9021</a></div>
+            <div class="contact-info-block__row"><a href="tel:+918848399309">+91 884 839 9309</a></div>
+          </div>
+          <div class="contact-info-block">
+            <div class="contact-info-block__label contact-info-block__label--pink">Our Office</div>
+            <div class="contact-info-block__row">Bangalore, India (HQ)</div>
+            <div class="contact-info-block__row">#17, 2nd floor, 7th Main Road, II stage Indiranagar, Bangalore 560038</div>
+          </div>
+        </div>
+        <div class="contact-right">
+          <h2 class="contact-right__title">Talk to Us</h2>
+          <p class="contact-right__sub">Let's start conversations that can change the way culture moves.</p>
+          <form class="contact-form" onsubmit="return false;">
+            <input type="text" placeholder="Whats your Name" autocomplete="name" />
+            <input type="email" placeholder="Email" autocomplete="email" />
+            <textarea placeholder="Message"></textarea>
+            <button type="submit" class="contact-form__btn">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__bar">
+      <div class="footer__bar-inner">
+        <span class="nav__logo footer__logo">beyond<span class="logo-dot">.</span></span>
+        <nav class="footer__nav">
+          <a href="index.html#how-it-works">How it works</a>
+          <a href="index.html#brands">For brands</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <span class="footer__copy">&#169; 2026 Beyond. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
