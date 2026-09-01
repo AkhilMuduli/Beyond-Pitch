@@ -36,11 +36,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const openNav = () => {
     mobNav.classList.add('open');
     overlay.classList.add('active');
+    ham.classList.add('open');
+    mobNav.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   };
   const closeNav = () => {
     mobNav.classList.remove('open');
     overlay.classList.remove('active');
+    ham.classList.remove('open');
+    mobNav.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   };
   ham?.addEventListener('click', openNav);
