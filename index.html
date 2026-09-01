@@ -23,6 +23,11 @@
         <li><a href="#how-it-works">How it works</a></li>
         <li><a href="#brands">For brands</a></li>
         <li><a href="#signin">Sign in</a></li>
+        <!-- <li class="nav__sep"></li> -->
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
       </ul>
       <a href="#" class="nav__cta" id="navCta">Start your journey →</a>
       <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
@@ -31,16 +36,62 @@
     </div>
   </nav>
 
-  <!-- Mobile Nav -->
-  <div class="mobile-nav" id="mobileNav">
-    <button class="mobile-nav__close" id="mobileClose">✕</button>
-    <ul>
-      <li><a href="#how-it-works">How it works</a></li>
-      <li><a href="#brands">For brands</a></li>
-      <li><a href="#signin">Sign in</a></li>
-    </ul>
-    <a href="#" class="nav__cta" style="width:100%;justify-content:center;">Start your journey →</a>
+  <!-- ═══ MOBILE FULLSCREEN MENU ═══ -->
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+
+    <!-- Glass X close button -->
+    <button class="mobile-nav__close" id="mobileClose" aria-label="Close menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="2" y1="2" x2="16" y2="16"/><line x1="16" y1="2" x2="2" y2="16"/>
+      </svg>
+    </button>
+
+    <!-- Large logo -->
+    <div class="mobile-nav__logo">beyond<span class="logo-dot">.</span></div>
+
+    <!-- Nav links list -->
+    <nav class="mobile-nav__links">
+
+      <!-- On-page sections -->
+      <a href="#how-it-works" class="mobile-nav__item">
+        <span>How it works</span>
+        <span class="mobile-nav__arrow">↗</span>
+      </a>
+      <a href="#brands" class="mobile-nav__item">
+        <span>For brands</span>
+        <span class="mobile-nav__arrow">↗</span>
+      </a>
+      <a href="#faq" class="mobile-nav__item">
+        <span>FAQ</span>
+        <span class="mobile-nav__arrow">↗</span>
+      </a>
+
+      <!-- Divider -->
+      <!-- <div class="mobile-nav__divider"></div> -->
+
+      <!-- Separate pages -->
+      <a href="about.html" class="mobile-nav__item">
+        <span>About Us</span>
+        <span class="mobile-nav__arrow">↗</span>
+      </a>
+      <a href="contact.html" class="mobile-nav__item">
+        <span>Contact Us</span>
+        <span class="mobile-nav__arrow">↗</span>
+      </a>
+      <a href="terms.html" class="mobile-nav__item">
+        <span>Terms of Use</span>
+        <span class="mobile-nav__arrow">↗</span>
+      </a>
+      <a href="privacy.html" class="mobile-nav__item">
+        <span>Privacy Policy</span>
+        <span class="mobile-nav__arrow">↗</span>
+      </a>
+    </nav>
+
+    <!-- CTA at bottom -->
+    <a href="#" class="nav__cta mobile-nav__cta" id="mobileNavCta">Start your journey →</a>
   </div>
+
   <div class="nav-overlay" id="navOverlay"></div>
 
   <main>
@@ -80,7 +131,7 @@
           </div>
         </div>
         <!-- Phone image -->
-        <img src="images/hero-phone.png" alt="Creator in phone frame with deal notifications" class="hero__phone floating" />
+        <img src="hero-phone.png" alt="Creator in phone frame with deal notifications" class="hero__phone floating" />
         <!-- Bottom-left deal card -->
         <div class="hero__card hero__card--bl">
           <span class="hcard-dot hcard-dot--green"></span>
@@ -265,7 +316,7 @@
     <section class="fsec2" id="grow">
       <div class="container fsec__inner">
         <div class="fsec__img-col" data-aos="fade-right">
-          <img src="images/girls-selfie.png" alt="Two creators taking a selfie" class="fsec__circle-img floating-slow" />
+          <img src="girls-selfie.png" alt="Two creators taking a selfie" class="fsec__circle-img floating-slow" />
         </div>
         <div class="fsec__text-col" data-aos="fade-left">
           <h2 class="fsec__title">
@@ -322,7 +373,7 @@
           </div>
         </div>
         <div class="fsec__img-col" data-aos="fade-left">
-          <img src="images/money-girl.png" alt="Creator celebrating deals" class="fsec__circle-img floating-slow" />
+          <img src="money-girl.png" alt="Creator celebrating deals" class="fsec__circle-img floating-slow" />
         </div>
       </div>
     </section>
@@ -331,7 +382,7 @@
     <section class="brands-proof" id="brands">
       <div class="container brands-proof__inner">
         <div class="brands-proof__image" data-aos="fade-right">
-          <img src="images/brands-stars.png" alt="Top brand logos and 5-star ratings" class="floating" />
+          <img src="brands-stars.png" alt="Top brand logos and 5-star ratings" class="floating" />
         </div>
         <div class="brands-proof__text" data-aos="fade-left">
           <p class="section-label">TRUSTED BY THE BEST</p>
@@ -395,7 +446,7 @@
         <!-- RIGHT IMAGE -->
         <div class="portfolio-sec__img-col" data-aos="fade-left">
           <img
-            src="images/portfolio-mockup.png"
+            src="portfolio-mockup.png"
             alt="Creator portfolio mockup showing profile card and testimonial"
             class="portfolio-sec__img"
           />
@@ -412,7 +463,7 @@
         <div class="dms-sec__img-col" data-aos="fade-right">
           <div class="dms-placeholder">
             <img
-              src="images/dm-mockup.png"
+              src="dm-mockup.png"
               alt="DMs that never miss a lead — phone mockup"
               class="dms-img"
               onerror="this.closest('.dms-placeholder').classList.add('dms-placeholder--empty')"
@@ -561,25 +612,25 @@
 
           <!-- ── AVATAR CIRCLES ── -->
           <div class="bubble av" style="--s:82px;  --t:2%;  --l:38%; --delay:0s">
-            <img src="images/av-top.jpg" alt="Creator" />
+            <img src="av-top.jpg" alt="Creator" />
           </div>
           <div class="bubble av" style="--s:56px;  --t:15%; --l:18%; --delay:1.2s; filter:blur(1.5px)">
-            <img src="images/av-topleft.jpg" alt="Creator" />
+            <img src="av-topleft.jpg" alt="Creator" />
           </div>
           <div class="bubble av av--center" style="--s:130px; --t:30%; --l:20%; --delay:.5s">
-            <img src="images/av-center.jpg" alt="Creator" />
+            <img src="av-center.jpg" alt="Creator" />
           </div>
           <div class="bubble av" style="--s:66px;  --t:54%; --l:2%;  --delay:1.8s">
-            <img src="images/av-left.jpg" alt="Creator" />
+            <img src="av-left.jpg" alt="Creator" />
           </div>
           <div class="bubble av" style="--s:78px;  --t:72%; --l:34%; --delay:.9s; filter:blur(1px)">
-            <img src="images/av-bottom.jpg" alt="Creator" />
+            <img src="av-bottom.jpg" alt="Creator" />
           </div>
           <div class="bubble av" style="--s:92px;  --t:36%; --l:62%; --delay:.3s">
-            <img src="images/av-right.jpg" alt="Creator" />
+            <img src="av-right.jpg" alt="Creator" />
           </div>
           <div class="bubble av" style="--s:52px;  --t:65%; --l:76%; --delay:1.5s; filter:blur(1px)">
-            <img src="images/av-bottomright.jpg" alt="Creator" />
+            <img src="av-bottomright.jpg" alt="Creator" />
           </div>
 
           <!-- ── DECORATIVE DOTS ── -->
@@ -714,7 +765,7 @@
         </div>
         <div class="ftcta__img-col" data-aos="fade-left">
           <div class="ftcta__card">
-            <img src="images/footer-girl.png" alt="Creator smiling and recording content" class="ftcta__card-img" />
+            <img src="footer-girl.png" alt="Creator smiling and recording content" class="ftcta__card-img" />
           </div>
         </div>
       </div>
