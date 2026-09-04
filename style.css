@@ -455,7 +455,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .hero__headline {
   font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: 120px;
+  font-size: 96px;
   font-weight: 800;
   line-height: 0.97;
   letter-spacing: -.04em;
@@ -559,6 +559,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: inline-block;
   width: min(400px, 86vw);
   z-index: 1;
+  margin-top: -3rem;
 }
 
 .hero__phone {
@@ -682,19 +683,60 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   letter-spacing: -.035em; line-height: 1.1;
 }
 
-.creators__grid { display: flex; flex-direction: column; gap: .7rem; margin-bottom: 2.5rem; }
-
-.creators__row {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
+/* Grid breaks out of .container to span full viewport width */
+.creators__grid {
+  display: flex;
+  flex-direction: column;
   gap: .7rem;
-}
-.creators__row--shift {
-  grid-template-columns: repeat(8, 1fr);
-  padding-left: 0;
+  margin-bottom: 2.5rem;
+  /* Break out of container */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
-/* Creator card */
+/* Marquee row wrapper — clips overflow, adds left/right edge fades */
+.creators__row--marquee {
+  overflow: hidden;
+  position: relative;
+  /* Left & right fade-out masks */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+}
+.creators__row--marquee:hover .ccard-track { animation-play-state: paused; }
+
+/* The scrolling track — uses flex, width is content-driven */
+.ccard-track {
+  display: flex;
+  gap: .7rem;
+  width: max-content;
+  will-change: transform;
+}
+.ccard-track--left  { animation: ccard-scroll-left  32s linear infinite; }
+.ccard-track--right { animation: ccard-scroll-right 32s linear infinite; }
+
+@keyframes ccard-scroll-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes ccard-scroll-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+/* Creator card — fixed width inside the track */
 .ccard {
   background: rgba(22, 22, 26, 0.97);
   border: none;
@@ -705,6 +747,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: all .3s var(--spring);
   position: relative; overflow: hidden;
   box-shadow: 0 6px 20px rgba(0,0,0,.28);
+  width: 160px;
+  flex-shrink: 0;
 }
 /* Kill old interior sheen */
 .ccard::before { display: none; }
@@ -779,6 +823,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   width: 36px; height: 36px; border-radius: 50%;
   background: var(--av); flex-shrink: 0;
   margin-bottom: .1rem; position: relative;
+}
+/* Photo avatar — overrides the colored circle */
+.ccard__av--img {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  flex-shrink: 0;
+  margin-bottom: .1rem;
+  display: block;
+  background: #2a2a30;
 }
 .av-ring {
   position: absolute; inset: -3px;
@@ -2024,8 +2079,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    RESPONSIVE
    ══════════════════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
-  .creators__row       { grid-template-columns: repeat(4,1fr); }
-  .creators__row--shift{ grid-template-columns: repeat(4,1fr); padding-left: 0; }
+  /* Cards slightly narrower on tablet */
+  .ccard { width: 145px; }
 }
 @media (max-width: 900px) {
   .nav__links, .nav__cta { display: none; }
@@ -2061,8 +2116,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 @media (max-width: 600px) {
   .hero__headline { font-size: clamp(2rem, 9.5vw, 3rem); letter-spacing: -.025em; line-height: 1.0; }
-  .creators__row       { grid-template-columns: repeat(2,1fr); }
-  .creators__row--shift{ grid-template-columns: repeat(2,1fr); }
+  /* Narrower cards + slower scroll on mobile */
+  .ccard { width: 130px; }
+  .ccard-track--left  { animation-duration: 24s; }
+  .ccard-track--right { animation-duration: 24s; }
   /* .hero__card { display: none; } */
   .footer__cols { grid-template-columns: 1fr 1fr; }
 
